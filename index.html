@@ -1,15 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Service Desk Launcher</title>
-  <script>
-    function openServiceDesk() {
-window.open("https://neuco.atlassian.net/servicedesk/customer/portal/3", "_blank");
-    }
-  </script>
+    <title>Jira Service Desk</title>
+    <script src="https://statics.teams.cdn.office.net/sdk/v1.10.0/js/MicrosoftTeams.min.js"></script>
+    <style>
+        body { margin: 0; padding: 20px; font-family: Arial; }
+        .button { 
+            background-color: #0052CC; 
+            color: white; 
+            padding: 15px; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            width: 100%; 
+        }
+    </style>
 </head>
 <body>
-  <p>Click to open the Service Desk:</p>
-  <button onclick="openServiceDesk()">Open Service Desk</button>
+    <button class="button" onclick="launchJira()">Open Jira Service Desk</button>
+    <script>
+        microsoftTeams.initialize();
+        function launchJira() {
+            window.open("https://neuco.atlassian.net/servicedesk/customer/portal/3", "_blank");
+        }
+    </script>
 </body>
 </html>
