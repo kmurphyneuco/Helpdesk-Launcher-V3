@@ -1,28 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Jira Service Desk</title>
+    <title>Jira Service Desk Redirect</title>
     <script src="https://statics.teams.cdn.office.net/sdk/v1.10.0/js/MicrosoftTeams.min.js"></script>
-    <style>
-        body { margin: 0; padding: 20px; font-family: Arial; }
-        .button { 
-            background-color: #0052CC; 
-            color: white; 
-            padding: 15px; 
-            border: none; 
-            border-radius: 5px; 
-            cursor: pointer; 
-            width: 100%; 
-        }
-    </style>
+    <meta http-equiv="refresh" content="0;url=https://neuco.atlassian.net/servicedesk/customer/portal/3">
 </head>
 <body>
-    <button class="button" onclick="launchJira()">Open Jira Service Desk</button>
+    <p>Redirecting to Jira Service Desk...</p>
     <script>
+        // Initialize Teams SDK
         microsoftTeams.initialize();
-        function launchJira() {
-            window.open("https://neuco.atlassian.net/servicedesk/customer/portal/3", "_blank");
-        }
+
+        // Optional: If you need Teams-specific context before redirecting
+        microsoftTeams.appInitialization.notifySuccess();
+        
+        // Fallback redirect in case meta refresh doesn't work
+        window.location.href = "https://neuco.atlassian.net/servicedesk/customer/portal/3";
     </script>
 </body>
 </html>
