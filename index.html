@@ -12,7 +12,15 @@
     <script>
         microsoftTeams.initialize(() => {
             microsoftTeams.appInitialization.notifySuccess();
-        });
+        microsoftTeams.authentication.getAuthToken({
+    successCallback: (token) => {
+        console.log("Auth token received:", token);
+        window.location.href = "https://neuco.atlassian.net/servicedesk/customer/portal/3";
+    },
+    failureCallback: (error) => {
+        console.error("Auth failed:", error);
+    }
+});
         
         // Redirect instead of iframe if preferred
         window.location.href = "https://neuco.atlassian.net/servicedesk/customer/portal/3";
